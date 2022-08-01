@@ -1,0 +1,75 @@
+##########################
+ERLANG PRESENTATION FINAL(Maybe)
+------------------------
+
+1. Documenting Code
+-------------------
+- Adding Comments (%)
+    % end of line
+    %% Indented with surrounding code
+    %%% Flush left
+
+- EDoc(Converts comments placed in code into navigatable HTML documentation
+    edoc:files([list_of_modules], [{dir, "doc"}]).
+
+2. Recap on Atoms and more
+--------------------------
+- atoms
+- Atomic booleans
+    - Rpr boolean logic values of the same name
+    - and or not xor
+
+4. Recap on Guards
+------------------
+- Specify which data a given function will accept
+- 'When' keyword
+- You can have multiple comparisons in a single guard, if you separate them
+    with semicolons they work as an OR statement separate them with , work as 
+    an AND statement
+
+5. Underscores
+--------------
+'_' is never bound.
+
+6. Tuples
+---------
+- Make it easy to package multiple arguments into a single container and let 
+    the receiving function decide what to do with them.
+- Why use tuples:
+    - Other code can package different things into a tuple and pass a single 
+        tupple as an argument instead of several arguments
+- Processing tuples
+    - Private functions
+
+7. Recursion
+------------
+- Case and If
+- There are times when it’s much easier to do some comparisons inside of a 
+    function clause instead of creating new functions
+- Case lets you perform pattern matching inside your function clause (instead of
+    having multiple functions.
+- If is similar to case but without pattern matching and uses comparisons
+    - If must find a matching case or it will return an error
+
+- Simple Recursion
+    - Since variables can't change values we use recursions to repeat actions
+    - Two kinds of useful recursions
+        - One you count on the recursion reaching a natural end(.ie it runs out 
+            of items to work on)
+        - Two there is no natural end and you need to keep track of the result
+            so the process can end
+
+8. Communicating with humans
+----------------------------
+-Strings
+    - Technically they dont exist in erlang as strings are lists of characters
+    - double quotes for strings use backslash(\) to escape
+    - concating strings 
+        - ++
+        - string:concat/2
+    - Equality
+        - ==
+        - =:=
+        - string:equal/2
+- Asking users for information
+    - io:read/1
